@@ -90,3 +90,7 @@ function convertMinutesToHours(convert)
   var result = (afterDecimal/100)*60;
   return Math.round(result);
 }
+
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
