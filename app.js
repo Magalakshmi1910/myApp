@@ -11,8 +11,6 @@ app.use(bodyparser.urlencoded({
 //make node  aware of ejs files
 app.set('view engine','ejs');
 
-const PORT = process.env.PORT || config.httpPort;
-
 app.route('/')
   //display main page
   .get((req,res)=>{
@@ -93,6 +91,6 @@ function convertMinutesToHours(convert)
   return Math.round(result);
 }
 
-app.listen(PORT, function(){
+app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
